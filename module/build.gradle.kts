@@ -18,8 +18,8 @@ publishing {
     publications {
         create("pluginPublication", MavenPublication::class) {
             from(project.components["java"])
-            groupId = "com.example.pg_pluginlibrary"
-            artifactId = project.name
+            groupId = "tminus1010.tmcommonkotlin"
+            artifactId = "tmcommonkotlindsl"
             version = "1.0.0"
         }
     }
