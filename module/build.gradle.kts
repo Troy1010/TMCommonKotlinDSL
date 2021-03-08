@@ -9,7 +9,7 @@ gradlePlugin {
     plugins {
         create("keyForPlugin") {
             id = "TMPlugin"
-            implementationClass = "uyt.DemoPlugin"
+            implementationClass = "com.example.tmcommonkotlindsl.TMPlugin"
         }
     }
 }

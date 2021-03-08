@@ -5,11 +5,12 @@ import org.gradle.api.Project
 
 open class TMPlugin : Plugin<Project> {
     override fun apply(project: Project) {
-        project.tasks.register("easyPublishLocal") {
-            description = "assemble & publishToMavenLocal"
-            group = "publishing"
-            doLast {
-                dependsOnInOrder(project.tasks.getByPath("assemble", "publishToMavenLocal"))
+        project.afterEvaluate {
+            tasks.register("easyPublishLocal") {
+                dependsOn(tasks.getByName("assemble"))
+                finalizedBy(tasks.getByName("publishToMavenLocal"))
+                description = "assemble & publishToMavenLocal"
+                group = "publishing"
             }
         }
     }
