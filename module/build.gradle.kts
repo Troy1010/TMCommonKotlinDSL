@@ -25,6 +25,20 @@ publishing {
     }
 }
 
+
+val tempTask = tasks.register("easyCleanAssemble") {
+    dependsOn(tasks.getByName("clean"))
+    finalizedBy(tasks.getByName("assemble"))
+    description = "assemble & publishToMavenLocal"
+    group = "notmeanttobeused"
+}
+tasks.register("easyCleanAssemblePublish") {
+    dependsOn(tempTask)
+    finalizedBy(tasks.getByName("publishToMavenLocal"))
+    description = "assemble & publishToMavenLocal & clean"
+    group = "publishing"
+}
+
 dependencies {
     implementation("com.android.tools.build:gradle:4.1.1")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72")
