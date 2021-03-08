@@ -12,6 +12,12 @@ open class TMPlugin : Plugin<Project> {
                 description = "assemble & publishToMavenLocal"
                 group = "publishing"
             }
+            tasks.register("easyPublishLocalThenClean") {
+                dependsOn(tasks.named("easyPublishLocal"))
+                finalizedBy(tasks.getByName("clean"))
+                description = "assemble & publishToMavenLocal & clean"
+                group = "publishing"
+            }
         }
     }
 }
