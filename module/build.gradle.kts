@@ -26,14 +26,14 @@ publishing {
 }
 
 
-val tempTask = tasks.register("easyCleanAssemble") {
+tasks.register("easyCleanAssemble") {
     dependsOn(tasks.getByName("clean"))
     finalizedBy(tasks.getByName("assemble"))
     description = "assemble & publishToMavenLocal"
-    group = "notmeanttobeused"
+    group = "zznotmeanttobeused"
 }
 tasks.register("easyCleanAssemblePublish") {
-    dependsOn(tempTask)
+    dependsOn(tasks.getByName("easyCleanAssemble"))
     finalizedBy(tasks.getByName("publishToMavenLocal"))
     description = "assemble & publishToMavenLocal & clean"
     group = "publishing"
