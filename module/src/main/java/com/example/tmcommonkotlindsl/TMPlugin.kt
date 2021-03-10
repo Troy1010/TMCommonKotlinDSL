@@ -7,8 +7,7 @@ import tmextensions.*
 open class TMPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.afterEvaluate {
-            tasks.registerOrderedPair("easyPublishLocal", "assemble", "publishToMavenLocal")
-            tasks.registerOrderedPair("easyPublishLocalThenClean", "easyPublishLocal", "clean")
+            tasks.registerOrderedPair("assemble", "publishToMavenLocal")
         }
     }
 }
