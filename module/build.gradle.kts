@@ -11,6 +11,10 @@ gradlePlugin {
             id = "TMRootPlugin"
             implementationClass = "com.example.tmcommonkotlindsl.TMRootPlugin"
         }
+        create("keyForPlugin2") {
+            id = "TMPlugin"
+            implementationClass = "com.example.tmcommonkotlindsl.TMPlugin"
+        }
     }
 }
 
