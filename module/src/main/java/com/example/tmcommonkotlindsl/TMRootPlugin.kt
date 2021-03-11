@@ -4,7 +4,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import tmextensions.*
 
-open class TMPlugin : Plugin<Project> {
+open class TMRootPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.afterEvaluate {
             subprojects.forEach { it.tasks.registerOrderedPair("assemble", "publishToMavenLocal") }

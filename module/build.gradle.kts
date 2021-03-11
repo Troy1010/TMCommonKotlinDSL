@@ -8,8 +8,8 @@ plugins {
 gradlePlugin {
     plugins {
         create("keyForPlugin") {
-            id = "TMPlugin"
-            implementationClass = "com.example.tmcommonkotlindsl.TMPlugin"
+            id = "TMRootPlugin"
+            implementationClass = "com.example.tmcommonkotlindsl.TMRootPlugin"
         }
     }
 }
