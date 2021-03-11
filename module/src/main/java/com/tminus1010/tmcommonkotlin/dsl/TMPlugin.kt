@@ -1,4 +1,4 @@
-package com.example.tmcommonkotlindsl
+package com.tminus1010.tmcommonkotlin.dsl
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

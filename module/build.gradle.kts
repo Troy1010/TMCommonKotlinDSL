@@ -9,11 +9,11 @@ gradlePlugin {
     plugins {
         create("keyForPlugin") {
             id = "TMRootPlugin"
-            implementationClass = "com.example.tmcommonkotlindsl.TMRootPlugin"
+            implementationClass = "com.tminus1010.tmcommonkotlin.dsl.TMRootPlugin"
         }
         create("keyForPlugin2") {
             id = "TMPlugin"
-            implementationClass = "com.example.tmcommonkotlindsl.TMPlugin"
+            implementationClass = "com.tminus1010.tmcommonkotlin.dsl.TMPlugin"
         }
     }
 }
@@ -22,7 +22,7 @@ publishing {
     publications {
         create("pluginPublication", MavenPublication::class) {
             from(project.components["java"])
-            groupId = "tminus1010.tmcommonkotlin"
+            groupId = "com.tminus1010.tmcommonkotlin"
             artifactId = "tmcommonkotlindsl"
             version = "1.0.0"
         }
