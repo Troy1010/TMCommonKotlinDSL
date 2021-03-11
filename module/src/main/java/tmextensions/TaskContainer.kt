@@ -13,12 +13,21 @@ fun TaskContainer.tryRegisterOrderedPair(
 ): TaskProvider<Task> {
     return try {
         register("${nameOfFirstTask}_${nameOfSecondTask}") {
-            dependsOn(getByName(nameOfFirstTask))
-            finalizedBy(getByName(nameOfSecondTask))
+            dependsOn(named(nameOfFirstTask))
+            finalizedBy(named(nameOfSecondTask))
             description = "$nameOfFirstTask & $nameOfSecondTask"
             group = "ordered task pair"
         }
     } catch (e: Throwable) {
         named("${nameOfFirstTask}_${nameOfSecondTask}")
+    }
+}
+
+fun TaskContainer.contains(taskName: String): Boolean {
+    return try {
+        getByName(taskName)
+        true
+    } catch (e: Throwable) {
+        false
     }
 }
